@@ -1,6 +1,10 @@
 # frozen_string_literal: true
 
 require "change_ledger"
+require 'active_support/all'
+require 'active_support/testing/time_helpers'
+require 'active_record'
+
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
@@ -12,4 +16,5 @@ RSpec.configure do |config|
   config.expect_with :rspec do |c|
     c.syntax = :expect
   end
+  config.include ActiveSupport::Testing::TimeHelpers
 end

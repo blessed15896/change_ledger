@@ -18,3 +18,10 @@ RSpec.configure do |config|
   end
   config.include ActiveSupport::Testing::TimeHelpers
 end
+
+
+ActiveRecord::Base.establish_connection(
+  adapter: "sqlite3",
+  database: ":memory:"
+)
+load("#{__dir__}/schema.rb")

@@ -21,8 +21,8 @@ module ChangeLedger
           id: a_truthy_value,
           global_id: "dummy_3",
           target: "name",
-          value: "Noel",
-          changed_at: time,
+          value: "Blessed",
+          changed_at: time.utc,
         )
       end
     end

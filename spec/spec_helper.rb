@@ -1,10 +1,13 @@
 # frozen_string_literal: true
 
 require "change_ledger"
-require 'active_support/all'
-require 'active_support/testing/time_helpers'
-require 'active_record'
+require "active_support/all"
+require "active_support/testing/time_helpers"
+require "active_record"
+require "combustion"
+require "bundler"
 
+Combustion.initialize! :all
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
@@ -18,10 +21,3 @@ RSpec.configure do |config|
   end
   config.include ActiveSupport::Testing::TimeHelpers
 end
-
-
-ActiveRecord::Base.establish_connection(
-  adapter: "sqlite3",
-  database: ":memory:"
-)
-load("#{__dir__}/schema.rb")
